@@ -1,16 +1,12 @@
-#include <stdlib.h>
+#include "libft.h"
 
-void *memset(void s[.n], int c, size_t n)
+void	*memset(void *s, int c, size_t n)
 {
-	char	*ptrc;
-	size_t	i;
+	unsigned char *ptrc;
+	size_t i;
 
-	*ptrc = (char *) s;
-	i = 0;
-	while(i < n)
-	{
-		s[i] = (char) c;
-	}
-
-	return (c);
+	ptrc = (unsigned char *)s;
+	while (n-- > 0)
+		*ptrc++ = (unsigned char)c;
+	return (s);
 }
