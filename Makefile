@@ -24,6 +24,9 @@ SRC = ft_atoi.c \
 	ft_strrchr.c \
 	ft_tolower.c \
 	ft_toupper.c \
+	ft_strjoin.c \
+	ft_strtrim.c \
+	ft_substr.c \
 
 .PHONY: all clean fclean re
 
