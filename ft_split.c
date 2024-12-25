@@ -48,7 +48,7 @@ char	**ft_split(char const *s, char c)
 		wordlen = sft_wordlen(s, c);
 		result[i] = ft_substr(s, 0, wordlen);
 		if (!result[i])
-			return (NULL);
+			return (free(result), NULL);
 		s += wordlen;
 	}
 	result[i] = NULL;
@@ -59,14 +59,22 @@ char	**ft_split(char const *s, char c)
 
 int	main(int ac, char **arv)
 {
+	char	**words_m;
 	char	**words;
 
 	(void)ac;
 	if (arv[1] && arv[2])
 	{
-		words = ft_split(arv[1], arv[2][0]);
+		words_m = ft_split(arv[1], arv[2][0]);
+		words = words_m;
+		if (!words)
+			return (0);
 		while (*words)
-			printf("%s\n", *words++);
+		{
+			printf("%s\n", *words);
+			free(*words++);
+		}
+		free(words_m);
 	}
 	return (0);
 }
