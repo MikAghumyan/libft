@@ -27,7 +27,8 @@ SRC = ft_atoi.c \
 	ft_strjoin.c \
 	ft_strtrim.c \
 	ft_substr.c \
-
+	ft_split.c \
+	
 .PHONY: all clean fclean re
 
 all: libft.a
