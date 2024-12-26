@@ -1,3 +1,5 @@
+NAME = libft.a
+
 CFLAGS = -Wall -Wextra -Werror
 CC = cc
 
@@ -38,9 +40,9 @@ SRC = ft_atoi.c \
 	
 .PHONY: all clean fclean re
 
-all: libft.a
+all: $(NAME)
 
-libft.a: $(SRC:.c=.o)
+$(NAME): $(SRC:.c=.o)
 	ar rcs $@ $^
 
 %.o: %.c
@@ -50,6 +52,6 @@ clean:
 	rm -f $(SRC:.c=.o)
 
 fclean: clean
-	rm -f libft.a
+	rm -f $(NAME)
 
 re: fclean all
