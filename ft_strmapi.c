@@ -6,18 +6,15 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	strlen;
 	char	*res;
 
-	if (!s)
+	if (!s || !f)
 		return (NULL);
 	strlen = ft_strlen(s);
 	res = (char *)malloc(strlen + 1 * sizeof(char));
 	if (!res)
 		return (NULL);
-	i = 0;
-	while (i < strlen)
-	{
+	i = -1;
+	while (++i < strlen)
 		res[i] = f(i, s[i]);
-		++i;
-	}
 	res[i] = '\0';
 	return (res);
 }
@@ -31,8 +28,11 @@ char	ft_f(unsigned int i, char c)
 
 int	main(void)
 {
-	char *str = "Hello, world!";
-	char *res = ft_strmapi(str, ft_f);
+	char	*str;
+	char	*res;
+
+	str = "Hello, world!";
+	res = ft_strmapi(str, ft_f);
 	printf("%s\n", res);
 	free(res);
 	return (0);
