@@ -37,19 +37,29 @@ SRC = ft_atoi.c \
 	ft_putstr_fd.c \
 	ft_putendl_fd.c \
 	ft_putnbr_fd.c
-	
+
+B_SRC = ft_lstnew.c \
+	ft_lstadd_front.c \
+	ft_lstsize.c \
+
+OBJ = $(SRC:.c=.o)
+BONUS_OBJ = $(B_SRC:.c=.o)
+
 .PHONY: all clean fclean re
 
 all: $(NAME)
 
-$(NAME): $(SRC:.c=.o)
+$(NAME): $(OBJ)
 	ar rcs $@ $^
+
+bonus: $(BONUS_OBJ)
+	ar rcs $(NAME) $^
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(SRC:.c=.o)
+	rm -f $(OBJ) $(BONUS_OBJ)
 
 fclean: clean
 	rm -f $(NAME)
