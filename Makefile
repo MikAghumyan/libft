@@ -53,6 +53,9 @@ BONUS_OBJ = $(B_SRC:.c=.o)
 
 .PHONY: all clean fclean re
 
+debug: CFLAGS += -g -fsanitize=address -fno-omit-frame-pointer
+debug: re bonus
+
 all: $(NAME)
 
 $(NAME): $(OBJ)
