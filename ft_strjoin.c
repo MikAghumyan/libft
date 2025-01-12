@@ -6,7 +6,7 @@
 /*   By: maghumya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 16:00:20 by maghumya          #+#    #+#             */
-/*   Updated: 2025/01/12 16:00:21 by maghumya         ###   ########.fr       */
+/*   Updated: 2025/01/12 16:11:18 by maghumya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char *str;
-	size_t len;
+	char	*str;
+	size_t	len;
 
 	if (!s1 || !s2)
 		return (NULL);

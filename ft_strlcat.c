@@ -6,7 +6,7 @@
 /*   By: maghumya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 16:00:31 by maghumya          #+#    #+#             */
-/*   Updated: 2025/01/12 16:00:32 by maghumya         ###   ########.fr       */
+/*   Updated: 2025/01/12 16:13:17 by maghumya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t dst_len;
-	size_t src_len;
-	size_t i;
+	size_t	dst_len;
+	size_t	src_len;
+	size_t	i;
 
 	dst_len = ft_strlen(dst);
 	src_len = ft_strlen(src);

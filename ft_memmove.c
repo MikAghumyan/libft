@@ -6,7 +6,7 @@
 /*   By: maghumya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 15:59:38 by maghumya          #+#    #+#             */
-/*   Updated: 2025/01/12 15:59:39 by maghumya         ###   ########.fr       */
+/*   Updated: 2025/01/12 16:11:43 by maghumya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char *ptrd;
-	unsigned char *ptrs;
-	unsigned char *tmp;
+	unsigned char	*ptrd;
+	unsigned char	*ptrs;
+	unsigned char	*tmp;
 
 	ptrd = (unsigned char *)dst;
 	ptrs = (unsigned char *)src;

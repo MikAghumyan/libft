@@ -6,7 +6,7 @@
 /*   By: maghumya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 16:01:10 by maghumya          #+#    #+#             */
-/*   Updated: 2025/01/12 16:01:11 by maghumya         ###   ########.fr       */
+/*   Updated: 2025/01/12 16:16:03 by maghumya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char *substr;
+	char	*substr;
 
 	if (!s)
 		return (NULL);

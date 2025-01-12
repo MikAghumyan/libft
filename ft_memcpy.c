@@ -6,7 +6,7 @@
 /*   By: maghumya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 15:59:34 by maghumya          #+#    #+#             */
-/*   Updated: 2025/01/12 15:59:35 by maghumya         ###   ########.fr       */
+/*   Updated: 2025/01/12 16:08:33 by maghumya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	unsigned char *ptrd;
-	unsigned char *ptrs;
+	unsigned char	*ptrd;
+	unsigned char	*ptrs;
 
 	ptrd = (unsigned char *)dst;
 	ptrs = (unsigned char *)src;

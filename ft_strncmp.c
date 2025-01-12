@@ -6,7 +6,7 @@
 /*   By: maghumya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 16:00:51 by maghumya          #+#    #+#             */
-/*   Updated: 2025/01/12 16:00:52 by maghumya         ###   ########.fr       */
+/*   Updated: 2025/01/12 16:14:15 by maghumya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (i < n && s1[i] && s2[i] && s1[i] == s2[i])

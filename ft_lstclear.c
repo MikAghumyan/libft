@@ -6,7 +6,7 @@
 /*   By: maghumya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 15:58:55 by maghumya          #+#    #+#             */
-/*   Updated: 2025/01/12 15:58:57 by maghumya         ###   ########.fr       */
+/*   Updated: 2025/01/12 16:07:38 by maghumya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	if (!lst || !del)
 		return ;

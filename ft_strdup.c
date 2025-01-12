@@ -6,7 +6,7 @@
 /*   By: maghumya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 16:00:13 by maghumya          #+#    #+#             */
-/*   Updated: 2025/01/12 16:00:14 by maghumya         ###   ########.fr       */
+/*   Updated: 2025/01/12 16:10:45 by maghumya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strdup(const char *s)
 {
-	char *str;
-	size_t len;
+	char	*str;
+	size_t	len;
 
 	len = ft_strlen(s) + 1;
 	str = malloc(len);
