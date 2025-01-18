@@ -16,11 +16,11 @@ char	*ft_strchr(const char *s, int c)
 {
 	while (*s)
 	{
-		if ((unsigned char)*s == (unsigned char)c)
+		if (*s == (const char)c)
 			return ((char *)s);
 		s++;
 	}
-	if (c == '\0')
+	if ((const char)c == '\0')
 		return ((char *)s);
 	return (NULL);
 }
