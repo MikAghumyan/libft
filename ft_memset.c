@@ -21,3 +21,13 @@ void	*ft_memset(void *s, int c, size_t n)
 		*ptrc++ = (unsigned char)c;
 	return (s);
 }
+/*
+#include <stdio.h>
+
+int main(void){
+	char str[] = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+	ft_memset(str, '.', 10);
+	printf("%s", str);
+	return (0);
+}
+*/

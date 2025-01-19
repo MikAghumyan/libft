@@ -34,3 +34,13 @@ int	ft_atoi(const char *nptr)
 	}
 	return (result * sign);
 }
+/*
+#include <stdio.h>
+#include <limits.h>
+
+int main(void)
+{
+	printf("%d %d %d %d %d\n", 0, INT_MAX, INT_MIN, 42, ~0);
+	return (0);
+}
+*/
