@@ -51,18 +51,18 @@ B_SRC = ft_lstnew_bonus.c \
 OBJ = $(SRC:.c=.o)
 BONUS_OBJ = $(B_SRC:.c=.o)
 
-.PHONY: all clean fclean re
+.PHONY: all debug bonus clean fclean re
 
 all: $(NAME)
+
+bonus: $(NAME) $(BONUS_OBJ)
+	ar rcs $(NAME) $(BONUS_OBJ)
 
 debug: CFLAGS += -g -fsanitize=address -fno-omit-frame-pointer
 debug: re bonus
 
 $(NAME): $(OBJ)
 	ar rcs $@ $^
-
-bonus: $(BONUS_OBJ)
-	ar rcs $(NAME) $^
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
