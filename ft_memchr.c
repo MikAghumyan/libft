@@ -25,3 +25,19 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
+
+#include <stdio.h>
+#include <string.h>
+
+int	main(void)
+{
+	char *str = "Hello World!";
+	char *ptr;
+	char *ptr2;
+
+	ptr = ft_memchr(str, 'W', strlen(str));
+	ptr2 = memchr(str, 'W', strlen(str));
+	printf("ft_memchr: %s\n", ptr);
+	printf("memchr: %s\n", ptr2);
+	return (0);
+}

@@ -16,3 +16,14 @@ int	ft_isalpha(int c)
 {
 	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
 }
+/*
+#include <stdio.h>
+#include <ctype.h>
+int main(void)
+{
+	printf("char : isalpha : ft_isalpha\n");
+	for(int i = 0; i < 128; ++i)
+		printf("'%c' : %d : %d\n", i, isalpha(i), ft_isalpha(i));
+	return (0);
+}
+*/
