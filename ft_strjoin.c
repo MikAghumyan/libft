@@ -27,3 +27,29 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ft_strlcat(str, s2, len + 1);
 	return (str);
 }
+
+/*
+#include <stdio.h>
+
+int	main(int argc, char **argv)
+{
+	char	*str;
+	char	*str2;
+	char	*res;
+
+	if (argc == 3)
+	{
+		str = argv[1];
+		str2 = argv[2];
+	}
+	else
+	{
+		str = "Hello, ";
+		str2 = "world!";
+	}
+	res = ft_strjoin(str, str2);
+	printf("%s\n", res);
+	free(res);
+	return (0);
+}
+*/

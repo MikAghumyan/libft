@@ -33,3 +33,28 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (NULL);
 }
+/*
+#include <stdio.h>
+#include <string.h>
+
+int	main(int argc, char **argv)
+{
+	char	*str;
+	char	*ptr;
+	size_t	len;
+
+	if (argc == 4)
+	{
+		str = argv[1];
+		len = atoi(argv[3]);
+	}
+	else
+	{
+		str = "Hello, world!";
+		len = 5;
+	}
+	ptr = ft_strnstr(str, argv[2], len);
+	printf("ft_strnstr: %s\n", ptr);
+	return (0);
+}
+*/

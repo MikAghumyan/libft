@@ -34,3 +34,19 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return (dst);
 }
+/*
+#include <stdio.h>
+#include <string.h>
+
+int	main(void)
+{
+	char	*str;
+	char	*res;
+
+	str = "Hello, world!";
+	res = (char *)malloc(strlen(str) + 1);
+	printf("%s\n", (char *)ft_memmove(res, str, strlen(str)));
+	free(res);
+	return (0);
+}
+*/

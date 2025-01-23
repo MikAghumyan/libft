@@ -24,3 +24,21 @@ char	*ft_strdup(const char *s)
 	ft_memcpy(str, s, len);
 	return (str);
 }
+/*
+#include <stdio.h>
+
+int	main(int argc, char **argv)
+{
+	char	*str;
+	char	*res;
+
+	if (argc == 2)
+		str = argv[1];
+	else
+		str = "Hello, world!";
+	res = ft_strdup(str);
+	printf("%s\n", res);
+	free(res);
+	return (0);
+}
+*/

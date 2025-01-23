@@ -25,3 +25,25 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
+/*
+#include <stdio.h>
+#include <string.h>
+
+int	main(int argc, char **argv)
+{
+	char	*str;
+	char	*ptr;
+
+	if (argc == 3)
+	{
+		str = argv[1];
+	}
+	else
+	{
+		str = "Hello, world!";
+	}
+	ptr = ft_strrchr(str, argv[2][0]);
+	printf("ft_strrchr: %s\n", ptr);
+	return (0);
+}
+*/

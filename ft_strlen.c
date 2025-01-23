@@ -21,3 +21,20 @@ size_t	ft_strlen(const char *s)
 		i++;
 	return (i);
 }
+/*
+#include <stdio.h>
+
+int	main(int argc, char **argv)
+{
+	char	*str;
+	size_t	res;
+
+	if (argc == 2)
+		str = argv[1];
+	else
+		str = "Hello, world!";
+	res = ft_strlen(str);
+	printf("ft_strlen: %zu\n", res);
+	return (0);
+}
+*/

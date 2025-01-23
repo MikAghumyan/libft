@@ -27,3 +27,20 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	dst[i] = '\0';
 	return (ft_strlen(src));
 }
+/*
+#include <stdio.h>
+#include <string.h>
+
+int	main(void)
+{
+	char	dst[100] = "Hello, ";
+	char	src[] = "world!";
+	size_t	size;
+	size_t	res;
+
+	size = 100;
+	res = ft_strlcpy(dst, src, size);
+	printf("%s: %zu\n", dst, res);
+	return (0);
+}
+*/

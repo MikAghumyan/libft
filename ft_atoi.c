@@ -35,12 +35,14 @@ int	ft_atoi(const char *nptr)
 	return (result * sign);
 }
 /*
-#include <stdio.h>
 #include <limits.h>
+#include <stdio.h>
 
-int main(void)
+int	main(void)
 {
 	printf("%d %d %d %d %d\n", 0, INT_MAX, INT_MIN, 42, ~0);
+	printf("%d %d\n", atoi("-52345252354366235235098623452759235626235"),
+		ft_atoi("-52345252354366235235098623452759235626235"));
 	return (0);
 }
 */

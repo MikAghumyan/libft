@@ -25,3 +25,19 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 		ptrd[n] = ptrs[n];
 	return (dst);
 }
+/*
+#include <stdio.h>
+#include <string.h>
+
+int	main(void)
+{
+	char	*str;
+	char	*res;
+
+	str = "Hello, world!";
+	res = (char *)malloc(strlen(str) + 1);
+	printf("%s\n", (char *)ft_memcpy(res, str, strlen(str)));
+	free(res);
+	return (0);
+}
+*/

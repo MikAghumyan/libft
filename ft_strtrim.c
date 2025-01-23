@@ -32,3 +32,28 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ft_strlcpy(str, s1 + start, end - start + 1);
 	return (str);
 }
+/*
+#include <stdio.h>
+
+int	main(int argc, char **argv)
+{
+	char	*str;
+	char	*set;
+	char	*res;
+
+	if (argc == 3)
+	{
+		str = argv[1];
+		set = argv[2];
+	}
+	else
+	{
+		str = "Hello, world!";
+		set = "Helo!";
+	}
+	res = ft_strtrim(str, set);
+	printf("%s\n", res);
+	free(res);
+	return (0);
+}
+*/
