@@ -25,7 +25,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
-
+/*
 #include <stdio.h>
 #include <string.h>
 
@@ -41,3 +41,4 @@ int	main(void)
 	printf("memchr: %s\n", ptr2);
 	return (0);
 }
+*/
