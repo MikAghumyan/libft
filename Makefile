@@ -64,7 +64,7 @@ debug: re bonus
 $(NAME): $(OBJ)
 	ar rcs $@ $^
 
-%.o: %.c
+%.o: %.c libft.h Makefile
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
