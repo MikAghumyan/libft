@@ -39,6 +39,16 @@ static size_t	sft_wordlen(const char *s, const char c)
 	return (i);
 }
 
+static void	sft_freeresult(char **result)
+{
+	size_t	i;
+
+	i = 0;
+	while (result[i])
+		free(result[i++]);
+	free(result);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**result;
@@ -60,7 +70,7 @@ char	**ft_split(char const *s, char c)
 		wordlen = sft_wordlen(s, c);
 		result[i] = ft_substr(s, 0, wordlen);
 		if (!result[i])
-			return (free(result), NULL);
+			return (sft_freeresult(result), NULL);
 		s += wordlen;
 	}
 	result[i] = NULL;
