@@ -13,9 +13,10 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <limits.h>
+# include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <limits.h>
 
 typedef struct s_list
 {
@@ -70,5 +71,14 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
+
+/* PRINTF */
+int					ft_printf(const char *format, ...);
+size_t				ft_putchar_c(char c);
+size_t				ft_putstr_c(char *str);
+size_t				ft_putnbr_c(int n);
+size_t				ft_putunit(unsigned int n);
+size_t				ft_puthex(unsigned long long n, int upper);
+size_t				ft_putptr(unsigned long long n);
 
 #endif

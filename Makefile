@@ -38,6 +38,10 @@ SRC = ft_atoi.c \
 	ft_putendl_fd.c \
 	ft_putnbr_fd.c
 
+PRINTF_SRC = ft_printf.c \
+	ft_printf_utils.c \
+	ft_puthex.c \
+
 B_SRC = ft_lstnew_bonus.c \
 	ft_lstadd_front_bonus.c \
 	ft_lstsize_bonus.c \
@@ -50,13 +54,17 @@ B_SRC = ft_lstnew_bonus.c \
 
 OBJ = $(SRC:.c=.o)
 BONUS_OBJ = $(B_SRC:.c=.o)
+PRINTF_OBJ = $(PRINTF_SRC:.c=.o)
 
-.PHONY: all debug bonus clean fclean re
+.PHONY: all debug bonus complete clean fclean re
 
 all: $(NAME)
 
 bonus: $(NAME) $(BONUS_OBJ)
 	ar rcs $(NAME) $(BONUS_OBJ)
+
+complete: $(NAME) $(BONUS_OBJ) $(PRINTF_OBJ)
+	ar rcs $(NAME) $(BONUS_OBJ) $(PRINTF_OBJ)
 
 debug: CFLAGS += -g -fsanitize=address -fno-omit-frame-pointer
 debug: re bonus
