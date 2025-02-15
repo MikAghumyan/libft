@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maghumya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 15:59:14 by maghumya          #+#    #+#             */
-/*   Updated: 2025/01/12 15:59:15 by maghumya         ###   ########.fr       */
+/*   Updated: 2025/02/16 01:05:31 by maghumya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,18 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*reslst;
 	t_list	*new_node;
+	void	*content;
 
 	if (!lst || !f || !del)
 		return (NULL);
 	reslst = NULL;
 	while (lst)
 	{
-		new_node = ft_lstnew(f(lst->content));
+		content = f(lst->content);
+		new_node = ft_lstnew(content);
 		if (!new_node)
 		{
+			del(content);
 			ft_lstclear(&reslst, del);
 			return (NULL);
 		}
