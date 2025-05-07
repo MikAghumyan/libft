@@ -6,7 +6,7 @@
 /*   By: maghumya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 16:01:59 by maghumya          #+#    #+#             */
-/*   Updated: 2025/01/12 16:02:05 by maghumya         ###   ########.fr       */
+/*   Updated: 2025/05/07 18:30:01 by maghumya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ size_t				ft_strlcat(char *dst, const char *src, size_t size);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
 int					ft_atoi(const char *nptr);
+int					ft_atoi_base(const char *nptr, int base);
 void				*ft_calloc(size_t nmemb, size_t size);
 char				*ft_strdup(const char *s);
 char				*ft_strjoin(char const *s1, char const *s2);
