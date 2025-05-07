@@ -1,22 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atoi_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maghumya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/12 15:57:58 by maghumya          #+#    #+#             */
-/*   Updated: 2025/05/07 18:02:39 by maghumya         ###   ########.fr       */
+/*   Created: 2025/05/07 17:52:25 by maghumya          #+#    #+#             */
+/*   Updated: 2025/05/07 18:14:01 by maghumya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+static int	ft_isdigit_base(char c, int base)
+{
+	const char	*digits = "0123456789ABCDEF";
+	int			i;
+
+	i = 0;
+	while (i < base)
+	{
+		if (digits[i] == ft_toupper(c))
+			return (i);
+		i++;
+	}
+	return (-1);
+}
+
+int	ft_atoi_base(const char *nptr, int base)
 {
 	int	i;
 	int	sign;
 	int	result;
+	int	digit;
 
 	i = 0;
 	sign = 1;
@@ -27,22 +43,25 @@ int	ft_atoi(const char *nptr)
 		sign = -1;
 	if (nptr[i] == '-' || nptr[i] == '+')
 		i++;
-	while (ft_isdigit(nptr[i]))
+	digit = ft_isdigit_base(nptr[i], base);
+	while (digit >= 0)
 	{
-		result = result * 10 + nptr[i] - '0';
+		result = result * base + digit;
 		i++;
+		digit = ft_isdigit_base(nptr[i], base);
 	}
 	return (result * sign);
 }
 /*
-#include <limits.h>
 #include <stdio.h>
 
 int	main(void)
 {
-	printf("%d %d %d %d %d\n", 0, INT_MAX, INT_MIN, 42, ~0);
-	printf("%d %d\n", atoi("-52345252354366235235098623452759235626235"),
-		ft_atoi("-52345252354366235235098623452759235626235"));
+	printf("%d\n", ft_atoi_base("1A", 16));  // 26
+	printf("%d\n", ft_atoi_base("1010", 2)); // 10
+	printf("%d\n", ft_atoi_base("FF", 16));  // 255
+	printf("%d\n", ft_atoi_base("123", 10)); // 123
+	printf("%d\n", ft_atoi_base("-1A", 16)); // -26
 	return (0);
 }
 */
