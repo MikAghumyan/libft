@@ -6,17 +6,22 @@
 /*   By: maghumya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 16:01:59 by maghumya          #+#    #+#             */
-/*   Updated: 2025/05/07 18:30:01 by maghumya         ###   ########.fr       */
+/*   Updated: 2025/05/17 16:16:38 by maghumya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <fcntl.h>
 # include <limits.h>
 # include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 32
+# endif
 
 typedef struct s_list
 {
@@ -81,5 +86,8 @@ size_t				ft_putnbr_c(int n);
 size_t				ft_putunit(unsigned int n);
 size_t				ft_puthex(unsigned long long n, int upper);
 size_t				ft_putptr(unsigned long long n);
+
+/* GET_NEXT_LINE */
+char				*get_next_line(int fd);
 
 #endif

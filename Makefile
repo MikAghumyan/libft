@@ -43,6 +43,8 @@ PRINTF_SRC = ft_printf.c \
 	ft_printf_utils.c \
 	ft_puthex.c \
 
+GNL_SRC = get_next_line.c \
+
 B_SRC = ft_lstnew_bonus.c \
 	ft_lstadd_front_bonus.c \
 	ft_lstsize_bonus.c \
@@ -56,6 +58,7 @@ B_SRC = ft_lstnew_bonus.c \
 OBJ = $(SRC:.c=.o)
 BONUS_OBJ = $(B_SRC:.c=.o)
 PRINTF_OBJ = $(PRINTF_SRC:.c=.o)
+GNL_OBJ = $(GNL_SRC:.c=.o)
 
 .PHONY: all debug bonus complete clean fclean re
 
@@ -64,8 +67,8 @@ all: $(NAME)
 bonus: $(NAME) $(BONUS_OBJ)
 	ar rcs $(NAME) $(BONUS_OBJ)
 
-complete: $(NAME) $(BONUS_OBJ) $(PRINTF_OBJ)
-	ar rcs $(NAME) $(BONUS_OBJ) $(PRINTF_OBJ)
+complete: $(NAME) $(BONUS_OBJ) $(PRINTF_OBJ) $(GNL_OBJ)
+	ar rcs $(NAME) $(BONUS_OBJ) $(PRINTF_OBJ) $(GNL_OBJ)
 
 debug: CFLAGS += -g -fsanitize=address -fno-omit-frame-pointer
 debug: re bonus
@@ -77,7 +80,7 @@ $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ) $(BONUS_OBJ) $(PRINTF_OBJ)
+	rm -f $(OBJ) $(BONUS_OBJ) $(PRINTF_OBJ) $(GNL_OBJ)
 
 fclean: clean
 	rm -f $(NAME)
