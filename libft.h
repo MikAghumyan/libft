@@ -6,7 +6,7 @@
 /*   By: maghumya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 16:01:59 by maghumya          #+#    #+#             */
-/*   Updated: 2025/08/29 19:19:06 by maghumya         ###   ########.fr       */
+/*   Updated: 2025/09/15 19:36:37 by maghumya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,12 +81,13 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 
 /* PRINTF */
 int					ft_printf(const char *format, ...);
-size_t				ft_putchar_c(char c);
-size_t				ft_putstr_c(char *str);
-size_t				ft_putnbr_c(int n);
-size_t				ft_putunit(unsigned int n);
-size_t				ft_puthex(unsigned long long n, int upper);
-size_t				ft_putptr(unsigned long long n);
+int					ft_fprintf(int fd, const char *format, ...);
+size_t				ft_putchar_c(char c, int fd);
+size_t				ft_putstr_c(char *str, int fd);
+size_t				ft_putnbr_c(int n, int fd);
+size_t				ft_putunit(unsigned int n, int fd);
+size_t				ft_puthex(unsigned long long n, int upper, int fd);
+size_t				ft_putptr(unsigned long long n, int fd);
 
 /* GET_NEXT_LINE */
 char				*get_next_line(int fd);

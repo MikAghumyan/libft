@@ -6,31 +6,31 @@
 /*   By: maghumya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 20:26:00 by maghumya          #+#    #+#             */
-/*   Updated: 2025/01/18 20:35:37 by maghumya         ###   ########.fr       */
+/*   Updated: 2025/09/15 20:00:21 by maghumya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libft.h"
 
-static size_t	ft_determinant(const char *format, va_list args)
+static size_t	ft_determinant(const char *format, va_list args, int fd)
 {
 	size_t	bytes;
 
 	bytes = 0;
 	if (*format == '%')
-		bytes += ft_putchar_c('%');
+		bytes += ft_putchar_c('%', fd);
 	else if (*format == 's')
-		bytes += ft_putstr_c(va_arg(args, char *));
+		bytes += ft_putstr_c(va_arg(args, char *), fd);
 	else if (*format == 'c')
-		bytes += ft_putchar_c(va_arg(args, int));
+		bytes += ft_putchar_c(va_arg(args, int), fd);
 	else if (*format == 'd' || *format == 'i')
-		bytes += ft_putnbr_c(va_arg(args, int));
+		bytes += ft_putnbr_c(va_arg(args, int), fd);
 	else if (*format == 'u')
-		bytes += ft_putunit(va_arg(args, unsigned int));
+		bytes += ft_putunit(va_arg(args, unsigned int), fd);
 	else if (*format == 'x' || *format == 'X')
-		bytes += ft_puthex(va_arg(args, unsigned int), *format == 'X');
+		bytes += ft_puthex(va_arg(args, unsigned int), *format == 'X', fd);
 	else if (*format == 'p')
-		bytes += ft_putptr(va_arg(args, unsigned long long));
+		bytes += ft_putptr(va_arg(args, unsigned long long), fd);
 	return (bytes);
 }
 
@@ -46,10 +46,33 @@ int	ft_printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			bytes += ft_determinant(format++, args);
+			bytes += ft_determinant(format++, args, 1);
 			continue ;
 		}
 		ft_putchar_fd(*format, 1);
+		bytes++;
+		format++;
+	}
+	va_end(args);
+	return (bytes);
+}
+
+int	ft_fprintf(int fd, const char *format, ...)
+{
+	size_t	bytes;
+	va_list	args;
+
+	va_start(args, format);
+	bytes = 0;
+	while (*format)
+	{
+		if (*format == '%')
+		{
+			format++;
+			bytes += ft_determinant(format++, args, fd);
+			continue ;
+		}
+		ft_putchar_fd(*format, fd);
 		bytes++;
 		format++;
 	}
