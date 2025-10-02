@@ -6,7 +6,7 @@
 /*   By: maghumya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 16:01:59 by maghumya          #+#    #+#             */
-/*   Updated: 2025/09/15 19:36:37 by maghumya         ###   ########.fr       */
+/*   Updated: 2025/10/02 14:23:23 by maghumya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,4 +92,7 @@ size_t				ft_putptr(unsigned long long n, int fd);
 /* GET_NEXT_LINE */
 char				*get_next_line(int fd);
 
+/* ARRAY UTILS */
+void				ft_free_array(void ***array);
+void				ft_free_array_len(void ***array, size_t len);
 #endif
