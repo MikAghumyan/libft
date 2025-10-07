@@ -6,7 +6,7 @@
 /*   By: maghumya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 00:00:00 by maghumya          #+#    #+#             */
-/*   Updated: 2025/10/02 14:40:52 by maghumya         ###   ########.fr       */
+/*   Updated: 2025/10/07 12:45:57 by maghumya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_free_array(void ***array)
 
 void	ft_free_array_len(void ***array, size_t len)
 {
-	size_t i;
+	size_t	i;
 
 	if (!array || !*array)
 		return ;
