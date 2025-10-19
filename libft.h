@@ -6,7 +6,7 @@
 /*   By: maghumya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 16:01:59 by maghumya          #+#    #+#             */
-/*   Updated: 2025/10/07 12:48:22 by maghumya         ###   ########.fr       */
+/*   Updated: 2025/10/19 19:30:22 by maghumya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,13 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+
+typedef struct s_strvector
+{
+	char			**data;
+	size_t			size;
+	size_t			capacity;
+}					t_strvector;
 
 void				*ft_memset(void *s, int c, size_t n);
 void				ft_bzero(void *s, size_t n);
@@ -96,4 +103,13 @@ char				*get_next_line(int fd);
 /* ARRAY UTILS */
 void				ft_free_array(void ***array);
 void				ft_free_array_len(void ***array, size_t len);
+
+/* STRVECTOR */
+t_strvector			*ft_sv_init(size_t initial_capacity);
+void				ft_sv_free(t_strvector *vector);
+int					ft_sv_reserve(t_strvector *vector);
+int					ft_sv_push_back(t_strvector *vector, char *str);
+int					ft_sv_pop_back(t_strvector *vector);
+int					ft_sv_push_back_dup(t_strvector *vector, const char *str);
+int					ft_sv_pop_back_free(t_strvector *vector);
 #endif
