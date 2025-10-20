@@ -6,7 +6,7 @@
 /*   By: maghumya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 19:27:49 by maghumya          #+#    #+#             */
-/*   Updated: 2025/10/19 19:48:32 by maghumya         ###   ########.fr       */
+/*   Updated: 2025/10/20 16:45:13 by maghumya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	ft_sv_reserve(t_strvector *vector)
 		return (0);
 
 	if (vector->size < vector->capacity)
-		return (0);
+		return (1);
 	if (vector->capacity == 0)
 		vector->capacity = 1;
 	else
