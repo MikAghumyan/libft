@@ -6,7 +6,7 @@
 /*   By: maghumya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 19:52:50 by maghumya          #+#    #+#             */
-/*   Updated: 2025/08/29 19:52:51 by maghumya         ###   ########.fr       */
+/*   Updated: 2025/10/21 11:30:43 by maghumya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ void	*ft_realloc(void *ptr, size_t old_size, size_t new_size)
 		return (NULL);
 	}
 	if (!ptr)
-		return (malloc(new_size));
+		return (ft_calloc(new_size, 1));
 	if (old_size == new_size)
 		return (ptr);
-	new_ptr = malloc(new_size);
+	new_ptr = ft_alloc(new_size, 1);
 	if (!new_ptr)
 		return (NULL);
 	if (old_size < new_size)
