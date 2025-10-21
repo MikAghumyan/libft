@@ -6,7 +6,7 @@
 /*   By: maghumya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 19:27:49 by maghumya          #+#    #+#             */
-/*   Updated: 2025/10/21 11:30:57 by maghumya         ###   ########.fr       */
+/*   Updated: 2025/10/21 11:37:09 by maghumya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ void	ft_sv_free(t_strvector *vector)
 
 int	ft_sv_reserve(t_strvector *vector)
 {
-	char **new_data;
-	size_t old_capacity;
+	char	**new_data;
+	size_t	old_capacity;
 
 	if (!vector)
 		return (0);
