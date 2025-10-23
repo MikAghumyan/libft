@@ -87,7 +87,7 @@ $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ) $(BONUS_OBJ) $(PRINTF_OBJ) $(GNL_OBJ)
+	rm -f $(OBJ) $(BONUS_OBJ) $(PRINTF_OBJ) $(GNL_OBJ) $(SV_OBJ)
 
 fclean: clean
 	rm -f $(NAME)

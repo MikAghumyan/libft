@@ -56,3 +56,29 @@ int	ft_sv_pop_back_free(t_strvector *vector)
 	vector->data[vector->size] = NULL;
 	return (1);
 }
+
+int	ft_sv_insert(t_strvector *vector, const char *str, size_t index)
+{
+	char	*dup_str;
+	size_t	i;
+
+	if (!vector || index > vector->size)
+		return (0);
+	dup_str = ft_strdup(str);
+	if (!dup_str)
+		return (0);
+	if (!ft_sv_reserve(vector))
+	{
+		free(dup_str);
+		return (0);
+	}
+	i = vector->size;
+	while (i > index)
+	{
+		vector->data[i] = vector->data[i - 1];
+		i--;
+	}
+	vector->data[index] = dup_str;
+	vector->size++;
+	return (1);
+}

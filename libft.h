@@ -112,4 +112,6 @@ int					ft_sv_push_back(t_strvector *vector, char *str);
 int					ft_sv_pop_back(t_strvector *vector);
 int					ft_sv_push_back_dup(t_strvector *vector, const char *str);
 int					ft_sv_pop_back_free(t_strvector *vector);
+int					ft_sv_insert(t_strvector *vector, const char *str,
+						size_t index);
 #endif
