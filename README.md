@@ -246,7 +246,7 @@ typedef struct s_strvector
 
 ## Author
 
-**Mik Aghumyan** (maghumya@student.42.fr)
+**Mik Aghumyan** (maghumya@student.42yerevan.am)
 
 Created as part of the 42 school curriculum.
 
