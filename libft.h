@@ -6,7 +6,7 @@
 /*   By: maghumya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 16:01:59 by maghumya          #+#    #+#             */
-/*   Updated: 2025/10/19 19:30:22 by maghumya         ###   ########.fr       */
+/*   Updated: 2025/12/29 00:43:49 by maghumya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
+double				ft_atod(const char *str);
 
 /* LINKED LIST */
 t_list				*ft_lstnew(void *content);
